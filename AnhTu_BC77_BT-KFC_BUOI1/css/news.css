@@ -1,0 +1,23 @@
+
+/* GLOBAL */
+body{
+    background-color: grey;
+}
+
+/* BODY CONTENT */
+
+.body__content{
+    background-color: white;
+    font-size: 20px;
+    width: 60%;
+}
+
+.body__content h2{
+    text-align: center;
+    font-size: 40px;
+    color: brown;
+}
+
+.body__content img{
+    width: 100%;
+}
