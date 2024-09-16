@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersoft Crypto</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- SLICK -->
+    <link
+      rel="stylesheet"
+      href="../node_modules/slick-carousel/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/slick-carousel/slick/slick-theme.css"
+    />
+
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="py-5">
+      <nav class="bg-main border-gray-200">
+        <div class="flex flex-wrap items-center justify-between container p-4">
+          <a
+            href="https://flowbite.com/"
+            class="flex items-center space-x-3 rtl:space-x-reverse"
+          >
+            <span
+              class="self-center text-2xl font-bold whitespace-nowrap text-white"
+              >Cyber Crypto</span
+            >
+          </a>
+          <div
+            class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
+          >
+            <button
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Get started
+            </button>
+            <button
+              data-collapse-toggle="navbar-cta"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              aria-controls="navbar-cta"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            id="navbar-cta"
+          >
+            <ul
+              class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Pages</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Porfolio</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- banner -->
+    <section class="banner py-5 px-4">
+      <div class="container md:flex md:flex-row-reverse md:items-center">
+        <!-- banner__img -->
+        <div class="banner__img md:w-50 md:pl-5">
+          <img src="./image/bank.png" alt="" class="w-2/3 md:w-full mx-auto" />
+        </div>
+        <!-- banner__info -->
+        <div class="banner__info mt-8 md:mt-0 md:w-50">
+          <h2 class="text-white text-5xl md:text-6xl font-bold">
+            Trusted & Secure <span class="text-gradient">Crypto</span> Market
+            Exchange.
+          </h2>
+          <p class="text-2xl text-white text-opacity-70 mt-10">
+            Already have a website? Try our hosting to alive it with
+            industry-leading load times.
+          </p>
+
+          <button
+            class="bg-gradient-sub text-white text-xl py-3 px-8 rounded-3xl mt-10"
+          >
+            Start Trading
+          </button>
+
+          <h3 class="text-4xl md:text-7xl text-white mt-10">A+ Rating</h3>
+          <p class="text-xl text-white text-opacity-60 mt-5">
+            Avg rating 4.8 makes us world most best apps.
+          </p>
+
+          <!-- <div class="testInComponent">hello</div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- platform -->
+    <section class="platform py-5 px-4">
+      <div class="container">
+        <!-- platform__title -->
+        <div class="platform__title text-center">
+          <h2
+            class="text-4xl md:text-5xl lg:text-6xl md:font-semibold text-white"
+          >
+            Trusted <span class="text-gradient">Cryptocurrency</span> Platform
+          </h2>
+          <p class="text-lg text-white text-opacity-70 mt-5">
+            jano has a variety of features that make it the best place to start
+            trading
+          </p>
+        </div>
+
+        <!-- platform__content -->
+        <div class="platform__content">
+          <div class="mb-4">
+            <ul
+              class="flex flex-wrap -mb-px text-sm font-medium text-center justify-center"
+              id="default-styled-tab"
+              data-tabs-toggle="#default-styled-tab-content"
+              data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-purple-600 dark:border-purple-500"
+              data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
+              role="tablist"
+            >
+              <li class="me-2" role="presentation">
+                <button
+                  class="inline-block p-4 border-b-2 rounded-t-lg"
+                  id="profile-styled-tab"
+                  data-tabs-target="#styled-profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                >
+                  Profile
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                  id="contacts-styled-tab"
+                  data-tabs-target="#styled-contacts"
+                  type="button"
+                  role="tab"
+                  aria-controls="contacts"
+                  aria-selected="false"
+                >
+                  Contacts
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div id="default-styled-tab-content">
+            <div
+              class="hidden"
+              id="styled-profile"
+              role="tabpanel"
+              aria-labelledby="profile-tab"
+            >
+              <div class="platform__list">
+                <div class="platform__item">
+                  <figure class="platform__img">
+                    <img src="./image/trusted_1.png" alt="" />
+                    <!-- <figcaption></figcaption> -->
+                  </figure>
+                  <h3>Best Exchange Rate</h3>
+                  <p>Convert data noise intelligent for quis lorem.</p>
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+                <div class="platform__item">
+                  <figure class="platform__img">
+                    <img src="./image/trusted_1.png" alt="" />
+                    <!-- <figcaption></figcaption> -->
+                  </figure>
+                  <h3>Best Exchange Rate</h3>
+                  <p>Convert data noise intelligent for quis lorem.</p>
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+                <div class="platform__item">
+                  <figure class="platform__img">
+                    <img src="./image/trusted_1.png" alt="" />
+                    <!-- <figcaption></figcaption> -->
+                  </figure>
+                  <h3>Best Exchange Rate</h3>
+                  <p>Convert data noise intelligent for quis lorem.</p>
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+                <div class="platform__item">
+                  <figure class="platform__img">
+                    <img src="./image/trusted_1.png" alt="" />
+                    <!-- <figcaption></figcaption> -->
+                  </figure>
+                  <h3>Best Exchange Rate</h3>
+                  <p>Convert data noise intelligent for quis lorem.</p>
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+                <div class="platform__item">
+                  <figure class="platform__img">
+                    <img src="./image/trusted_1.png" alt="" />
+                    <!-- <figcaption></figcaption> -->
+                  </figure>
+                  <h3>Best Exchange Rate</h3>
+                  <p>Convert data noise intelligent for quis lorem.</p>
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+                <div class="platform__item">
+                  <figure class="platform__img">
+                    <img src="./image/trusted_1.png" alt="" />
+                    <!-- <figcaption></figcaption> -->
+                  </figure>
+                  <h3>Best Exchange Rate</h3>
+                  <p>Convert data noise intelligent for quis lorem.</p>
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="hidden"
+              id="styled-contacts"
+              role="tabpanel"
+              aria-labelledby="contacts-tab"
+            >
+              <div class="platform__list">
+                <div class="platform__item">
+                  <figure class="platform__img">
+                    <img src="./image/trusted_1.png" alt="" />
+                    <!-- <figcaption></figcaption> -->
+                  </figure>
+                  <h3>Best Exchange Rate</h3>
+                  <p>Convert data noise intelligent for quis lorem.</p>
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+                <div class="platform__item">
+                  <figure class="platform__img">
+                    <img src="./image/trusted_1.png" alt="" />
+                    <!-- <figcaption></figcaption> -->
+                  </figure>
+                  <h3>Best Exchange Rate</h3>
+                  <p>Convert data noise intelligent for quis lorem.</p>
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+                <div class="platform__item">
+                  <figure class="platform__img">
+                    <img src="./image/trusted_1.png" alt="" />
+                    <!-- <figcaption></figcaption> -->
+                  </figure>
+                  <h3>Best Exchange Rate</h3>
+                  <p>Convert data noise intelligent for quis lorem.</p>
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- feedback -->
+    <section class="feedback py-5">
+      <div class="container">
+        <div class="feedback__title text-center">
+          <p class="text-lg text-white text-opacity-70 mb-5">Feedback</p>
+          <h2
+            class="text-4xl md:text-5xl lg:text-6xl md:font-semibold text-white"
+          >
+            Trusted by <span class="text-gradient">Clients</span>
+          </h2>
+        </div>
+
+        <div class="feedback__content mt-8">
+          <div class="feedback__carousel">
+            <div class="feedback__item text-white">
+              <figure class="feedback__logo">
+                <img src="./image/kanban.png" alt="" />
+              </figure>
+              <div class="feedback__rate">
+                <iframe
+                  src="https://lottie.host/embed/74e50303-db05-4468-864e-1ae75efb6af9/mtYPIOcyN1.json"
+                  class="w-32 h-8"
+                ></iframe>
+              </div>
+              <p class="feedback__text">
+                Certainly from my perspective quis been a great success with due
+                WP giving us that enterprises level assured quality.
+              </p>
+              <p class="feedback__price">Quality & Cost: <span>15.00</span></p>
+            </div>
+            <div class="feedback__item text-white">
+              <figure class="feedback__logo">
+                <img src="./image/aven.png" alt="" />
+              </figure>
+              <div class="feedback__rate">
+                <iframe
+                  src="https://lottie.host/embed/74e50303-db05-4468-864e-1ae75efb6af9/mtYPIOcyN1.json"
+                  class="w-32 h-8"
+                ></iframe>
+              </div>
+              <p class="feedback__text">
+                Certainly from my perspective quis been a great success with due
+                WP giving us that enterprises level assured quality.
+              </p>
+              <p class="feedback__price">Quality & Cost: <span>15.00</span></p>
+            </div>
+            <div class="feedback__item text-white">
+              <figure class="feedback__logo">
+                <img src="./image/fox.png" alt="" />
+              </figure>
+              <div class="feedback__rate">
+                <iframe
+                  src="https://lottie.host/embed/74e50303-db05-4468-864e-1ae75efb6af9/mtYPIOcyN1.json"
+                  class="w-32 h-8"
+                ></iframe>
+              </div>
+              <p class="feedback__text">
+                Certainly from my perspective quis been a great success with due
+                WP giving us that enterprises level assured quality.
+              </p>
+              <p class="feedback__price">Quality & Cost: <span>15.00</span></p>
+            </div>
+            <div class="feedback__item text-white">
+              <figure class="feedback__logo">
+                <img src="./image/goldline.png" alt="" />
+              </figure>
+              <div class="feedback__rate">
+                <iframe
+                  src="https://lottie.host/embed/74e50303-db05-4468-864e-1ae75efb6af9/mtYPIOcyN1.json"
+                  class="w-32 h-8"
+                ></iframe>
+              </div>
+              <p class="feedback__text">
+                Certainly from my perspective quis been a great success with due
+                WP giving us that enterprises level assured quality.
+              </p>
+              <p class="feedback__price">Quality & Cost: <span>15.00</span></p>
+            </div>
+            <div class="feedback__item text-white">
+              <figure class="feedback__logo">
+                <img src="./image/kanban.png" alt="" />
+              </figure>
+              <div class="feedback__rate">
+                <iframe
+                  src="https://lottie.host/embed/74e50303-db05-4468-864e-1ae75efb6af9/mtYPIOcyN1.json"
+                  class="w-32 h-8"
+                ></iframe>
+              </div>
+              <p class="feedback__text">
+                Certainly from my perspective quis been a great success with due
+                WP giving us that enterprises level assured quality.
+              </p>
+              <p class="feedback__price">Quality & Cost: <span>15.00</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="py-10 md:py-20 px-5 sm:px-10 lg:px-0">
+      <div class="container mx-auto">
+        <div
+          class="bg-white bg-opacity-5 py-10 px-5 md:px-10 lg:px-20 rounded-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8"
+        >
+          <!-- Newsletter section -->
+          <div class="lg:col-span-5">
+            <h3 class="text-gradient text-4xl font-bold mb-6">Jano.</h3>
+            <p class="text-xl text-white leading-7 mb-4">Join our newsletter</p>
+            <div
+              class="bg-white bg-opacity-5 rounded-lg p-2 flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3"
+            >
+              <input
+                type="email"
+                placeholder="Enter email"
+                class="bg-transparent border-none outline-none text-white w-full sm:flex-1 py-3 px-4"
+              />
+              <button
+                class="bg-gradient-sub text-white text-xl py-3 px-8 rounded-md w-full sm:w-auto"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+
+          <!-- Links column -->
+          <div class="lg:col-span-2">
+            <h3 class="footer__title mb-4 text-white font-semibold">Links</h3>
+            <ul class="footer__item">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Demo the product</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal column -->
+          <div class="lg:col-span-2">
+            <h3 class="footer__title mb-4 text-white font-semibold">Legal</h3>
+            <ul class="footer__item">
+              <li><a href="#">Term of use</a></li>
+              <li>
+                <a href="#">Terms & conditions</a>
+              </li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Cookie policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Products column -->
+          <div class="lg:col-span-3">
+            <h3 class="footer__title mb-4 text-white font-semibold">
+              Products
+            </h3>
+            <ul class="footer__item">
+              <li><a href="#">Take the tour</a></li>
+              <li><a href="#">Live chat</a></li>
+              <li><a href="#">Self-service</a></li>
+              <li><a href="#">Social</a></li>
+              <li><a href="#">Collaboration</a></li>
+              <li><a href="#">Jano Reviews</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOWBITE LIBRARY -->
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+
+    <!-- JQUERY -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- SLICK LIBRARY-->
+    <script src="../node_modules/slick-carousel/slick/slick.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".feedback__carousel").slick({
+          // setting-name: setting-value
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          arrows: false,
+          dots: true,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>

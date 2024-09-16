@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* background: #151937; */
+  @apply bg-main;
+}
+
+.text-gradient {
+  @apply bg-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* 
+.test {
+  @apply bg-black;
+}
+
+@layer components {
+  .testInComponent {
+    @apply bg-red-500 text-white;
+  }
+} */
+
+.platform__list {
+  @apply grid gap-8 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.platform__item {
+  /* cách 1 */
+  /* @apply bg-white bg-opacity-10 rounded-xl p-4 text-center; */
+
+  /* cách 2 */
+  @apply bg-white bg-opacity-10 rounded-xl p-7 flex flex-col justify-center items-center;
+}
+
+.platform__item h3 {
+  @apply text-white text-2xl;
+}
+
+.platform__item p {
+  @apply w-full text-left mt-3 mb-5 text-base text-gray-600;
+}
+
+.platform__item i {
+  @apply text-gray-600 text-3xl;
+}
+
+.feedback__item {
+  @apply bg-white bg-opacity-20 rounded-xl p-9;
+  width: calc(100% - 30px) !important;
+  display: block !important;
+  margin: 0 auto;
+}
+
+.feedback__rate i {
+  @apply text-yellow-400 mt-3;
+}
+
+.feedback__text {
+  @apply text-white text-2xl mt-4;
+}
+
+.feedback__price {
+  @apply text-lg mt-5;
+}
+
+.feedback__price span {
+  @apply text-gray-500;
+}
+
+.feedback__carousel .slick-dots li button:before {
+  font-size: 10px;
+  color: #fff;
+  opacity: 1;
+}
+
+.feedback__carousel .slick-dots li.slick-active button:before {
+  color: #ff5ea3;
+}
+
+.feedback__carousel {
+  @apply mb-7 md:mb-12;
+}
+
+.feedback__carousel .slick-dots {
+  bottom: -30px;
+}
+
+/* Footer Section */
+
+.footer__title {
+  @apply mb-5 text-2xl leading-8 font-bold text-white
+}
+
+.footer__item a{
+  @apply my-2 inline-block text-lg leading-7 text-white text-opacity-60 hover:text-pink-500 transition-all ease-in-out 
+}
+
+.platform__item i {
+  animation: moveLeftRight 1.5s ease-in-out infinite;
+}
+
+@keyframes moveLeftRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+@media screen and (min-width: 768px) {
+  .feedback__carousel .slick-dots li button:before {
+    font-size: 20px;
+  }
+
+  .feedback__carousel .slick-dots {
+    bottom: -45px;
+  }
+}
