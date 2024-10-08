@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./css/output.css" />
+    <title>JAVASCRIPT-EXERCISE-5</title>
+  </head>
+  <body class="bg-white dark:bg-gray-800 font-poppins">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <i class="fa-brands fa-square-js text-4xl text-green-500"></i>
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >JavaScript Exercise #5</span
+          >
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button
+            onclick="modeOperation()"
+            id="theme-toggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <button
+            data-collapse-toggle="navbar-cta"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-cta"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-cta"
+        >
+          <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+            id="default-tab"
+            data-tabs-toggle="#default-tab-content"
+            role="tablist"
+          >
+            <li>
+              <button
+                data-accordion-target="#accordion-color-body-1"
+                aria-expanded="true"
+                aria-controls="accordion-color-body-1"
+                class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
+                aria-current="page"
+              ></button>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </nav>
+
+    <section class="container mx-auto max-w-6xl my-6">
+      <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+        <ul
+          class="flex flex-wrap -mb-px text-sm font-medium text-center"
+          id="default-styled-tab"
+          data-tabs-toggle="#default-styled-tab-content"
+          data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-purple-600 dark:border-purple-500"
+          data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
+          role="tablist"
+        >
+          <li class="me-2" role="presentation">
+            <button
+              class="inline-block p-4 border-b-2 rounded-t-lg"
+              id="profile-styled-tab"
+              data-tabs-target="#styled-profile"
+              type="button"
+              role="tab"
+              aria-controls="profile"
+              aria-selected="false"
+            >
+              <i class="fa-solid fa-graduation-cap"></i>
+              Admissions Management
+            </button>
+          </li>
+          <li class="me-2" role="presentation">
+            <button
+              class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+              id="dashboard-styled-tab"
+              data-tabs-target="#styled-dashboard"
+              type="button"
+              role="tab"
+              aria-controls="dashboard"
+              aria-selected="false"
+            >
+              <i class="fa-solid fa-bolt"></i>
+              Electricity Bill Calculation
+            </button>
+          </li>
+          <li class="me-2" role="presentation">
+            <button
+              class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+              id="settings-styled-tab"
+              data-tabs-target="#styled-settings"
+              type="button"
+              role="tab"
+              aria-controls="settings"
+              aria-selected="false"
+            >
+              <i class="fa-solid fa-chart-line"></i>
+              Personal Income Tax Calculation.
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+              id="contacts-styled-tab"
+              data-tabs-target="#styled-contacts"
+              type="button"
+              role="tab"
+              aria-controls="contacts"
+              aria-selected="false"
+            >
+              <i class="fa-solid fa-network-wired"></i>
+              Starlink Fee Calculation
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div id="default-styled-tab-content">
+        <!-- -------------------------------------- #1 [START] Admissions Management ------------------------------------- -->
+        <div
+          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="styled-profile"
+          role="tabpanel"
+          aria-labelledby="profile-tab"
+        >
+          <!-- -----------------[START] Candidate Information Section ----------------- -->
+          <span
+            class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400"
+            >🗃️ Candidate Information</span
+          >
+          <div
+            class="text-sm mt-2 mb-8 text-gray-500 dark:text-gray-400 grid grid-cols-3 gap-4"
+          >
+            <!-- The Cut-Off Score Input Section -->
+            <div>
+              <label
+                for="bedrooms-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Choose The Cut-Off Score</label
+              >
+              <div class="relative flex items-center">
+                <button
+                  type="button"
+                  id="decrement-button"
+                  data-input-counter-decrement="cut-off-score"
+                  class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                >
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input
+                  type="text"
+                  id="cut-off-score"
+                  data-input-counter
+                  data-input-counter-min="1"
+                  data-input-counter-max="30"
+                  aria-describedby="helper-text-explanation"
+                  class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
+                  value="30"
+                  required
+                />
+                <div
+                  class="absolute bottom-1 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex items-center text-xs text-gray-400 space-x-1 rtl:space-x-reverse"
+                >
+                  <i class="fa-solid fa-chart-gantt"></i>
+                  <span>Cut-Off Score</span>
+                </div>
+                <button
+                  type="button"
+                  id="increment-button"
+                  data-input-counter-increment="cut-off-score"
+                  class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- The Area Input Section -->
+            <div>
+              <label
+                for="countries"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Select the Areas</label
+              >
+              <select
+                id="candidate-area"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option selected value="X">Non-priority area</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+              </select>
+            </div>
+
+            <!-- The Student Type Section  -->
+            <div>
+              <label
+                for="countries"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Select the Student Type</label
+              >
+              <select
+                id="candidate-type"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option selected value="0">Non-priority candidate</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+          </div>
+          <!-- ----------------- [END] Candidate Information Section ----------------- -->
+
+          <!-- ----------------- [START] Candidate Score Section ----------------- -->
+          <span
+            class="bg-yellow-100 mt-8 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300"
+            >🎖️ Candidate Score</span
+          >
+          <div
+            class="text-sm mt-2 mb-8 text-gray-500 dark:text-gray-400 grid grid-cols-3 gap-4"
+          >
+            <!-- #1 Subject Score -->
+            <div>
+              <label
+                for="first-score-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Choose The 1st Subject Score</label
+              >
+              <div class="relative flex items-center">
+                <button
+                  type="button"
+                  id="decrement-button"
+                  data-input-counter-decrement="firstScore"
+                  class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                >
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input
+                  type="text"
+                  id="firstScore"
+                  data-input-counter
+                  data-input-counter-min="1"
+                  data-input-counter-max="10"
+                  aria-describedby="helper-text-explanation"
+                  class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
+                  value="10"
+                  required
+                />
+                <div
+                  class="absolute bottom-1 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex items-center text-xs text-gray-400 space-x-1 rtl:space-x-reverse"
+                >
+                  <span>#1 Subject Score</span>
+                </div>
+                <button
+                  type="button"
+                  id="increment-button"
+                  data-input-counter-increment="firstScore"
+                  class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- #2 Subject Score -->
+            <div>
+              <label
+                for="bedrooms-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Choose The 2nd Subject Score</label
+              >
+              <div class="relative flex items-center">
+                <button
+                  type="button"
+                  id="decrement-button"
+                  data-input-counter-decrement="secondScore"
+                  class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                >
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input
+                  type="text"
+                  id="secondScore"
+                  data-input-counter
+                  data-input-counter-min="1"
+                  data-input-counter-max="10"
+                  aria-describedby="helper-text-explanation"
+                  class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
+                  value="10"
+                  required
+                />
+                <div
+                  class="absolute bottom-1 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex items-center text-xs text-gray-400 space-x-1 rtl:space-x-reverse"
+                >
+                  <span>#2 Subject Score</span>
+                </div>
+                <button
+                  type="button"
+                  id="increment-button"
+                  data-input-counter-increment="secondScore"
+                  class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- #3 Subject Score -->
+            <div>
+              <label
+                for="bedrooms-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Choose The 3rd Subject Score</label
+              >
+              <div class="relative flex items-center">
+                <button
+                  type="button"
+                  id="decrement-button"
+                  data-input-counter-decrement="thirdScore"
+                  class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                >
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input
+                  type="text"
+                  id="thirdScore"
+                  data-input-counter
+                  data-input-counter-min="1"
+                  data-input-counter-max="10"
+                  aria-describedby="helper-text-explanation"
+                  class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
+                  value="10"
+                  required
+                />
+                <div
+                  class="absolute bottom-1 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex items-center text-xs text-gray-400 space-x-1 rtl:space-x-reverse"
+                >
+                  <span>#3 Subject Score</span>
+                </div>
+                <button
+                  type="button"
+                  id="increment-button"
+                  data-input-counter-increment="thirdScore"
+                  class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- ----------------- [END] Candidate Score Section ----------------- -->
+
+          <!-- ----------------- [START] Test Results ----------------- -->
+          <span
+            class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400"
+            >☑️ Final Result</span
+          >
+          <div
+            class="text-sm my-2 text-gray-500 dark:text-gray-400 grid grid-cols-5 gap-3"
+          >
+            <!-- Result Button -->
+            <div>
+              <label
+                for="first-score-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >What's Exam Going on?</label
+              >
+              <div class="items-center">
+                <button
+                  onclick="checkExam()"
+                  type="button"
+                  class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 w-full"
+                >
+                  See Result Now <i class="fa-solid fa-caret-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- The Exam Score -->
+            <div>
+              <label
+                for="bedrooms-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >This is The Total Score</label
+              >
+              <div class="relative flex items-center">
+                <span
+                  id="exam-score"
+                  class="font-bold text-center bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                  <i class="fa-brands fa-uncharted"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- Exam Result -->
+            <div class="col-span-3">
+              <label
+                for="bedrooms-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >This is The Exam Result</label
+              >
+              <div class="relative flex items-center">
+                <p
+                  id="exam-result"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+                  The Result is ...
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- ----------------- [END] Test Results ----------------- -->
+        </div>
+        <!-- -------------------------------------- #1 [END] Admissions Management ------------------------------------- -->
+
+        <!-- -------------------------------------- #2 [START] Electricity Bill Calculation ------------------------------------- -->
+        <div
+          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="styled-dashboard"
+          role="tabpanel"
+          aria-labelledby="dashboard-tab"
+        >
+          <div
+            class="text-sm text-gray-500 dark:text-gray-400 grid grid-cols-4 gap-3"
+          >
+            <!-- Name Input Section: -->
+            <div>
+              <label
+                for="number-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Insert Customer Name:</label
+              >
+              <input
+                type="text"
+                id="customer-name"
+                aria-describedby="helper-text-explanation"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Ser Arthur Dayne"
+                required
+              />
+            </div>
+            <!-- Electricity Input Section: -->
+
+            <div>
+              <label
+                for="number-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Insert The Electricity Consumption:</label
+              >
+              <input
+                type="number"
+                id="electric-consump"
+                aria-describedby="helper-text-explanation"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="90210"
+                required
+              />
+            </div>
+
+            <div class="col-span-2">
+              <label
+                for="website-admin"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >See The Total Electricity Bill:
+              </label>
+              <div class="flex">
+                <span
+                  class="inline-flex items-center text-xs text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
+                >
+                  <button
+                    onclick="calcElectricBill()"
+                    type="button"
+                    class="px-3 py-3 text-xs font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Calculate Now <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </span>
+                <span
+                  type="text"
+                  id="final-bill"
+                  class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="How much need to be paid?"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- -------------------------------------- #2 [END] Electricity Bill Calculation ------------------------------------- -->
+
+        <!-- -------------------------------------- #3 [START] Tax Calculation ------------------------------------- -->
+        <div
+          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="styled-settings"
+          role="tabpanel"
+          aria-labelledby="settings-tab"
+        >
+          <div
+            class="text-sm text-gray-500 dark:text-gray-400 grid grid-cols-5 gap-2"
+          >
+            <!-- Name Input Section: -->
+            <div>
+              <label
+                for="number-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Insert Name:</label
+              >
+              <input
+                type="text"
+                id="tax-payer"
+                aria-describedby="helper-text-explanation"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Ser Arthur Dayne"
+                required
+              />
+            </div>
+            <!-- Annual Income Input Section: -->
+            <div>
+              <label
+                for="number-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Insert The Annual Income:</label
+              >
+              <input
+                type="number"
+                id="annual-income"
+                aria-describedby="helper-text-explanation"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="100,000,000"
+                required
+              />
+            </div>
+            <!-- Dependent Input Section: -->
+            <div>
+              <label
+                for="number-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Insert Number of Dependents:</label
+              >
+              <input
+                type="number"
+                id="dependent-num"
+                aria-describedby="helper-text-explanation"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="..."
+                required
+              />
+            </div>
+
+            <div class="col-span-2">
+              <label
+                for="website-admin"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >See the Total Tax To Be Paid:
+              </label>
+              <div class="flex">
+                <span
+                  class="inline-flex items-center text-xs text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
+                >
+                  <button
+                    onclick="calcTax()"
+                    type="button"
+                    class="px-3 py-3 text-xs font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Calculate Now <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </span>
+                <span
+                  type="text"
+                  id="final-tax"
+                  class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="How much tax to be paid?"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- -------------------------------------- #3 [END] Tax Calculation ------------------------------------- -->
+
+        <!-- -------------------------------------- #4 [START] Starlink TV Services FEE ------------------------------------- -->
+        <div
+          class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+          id="styled-contacts"
+          role="tabpanel"
+          aria-labelledby="contacts-tab"
+        >
+          <div
+            class="text-sm text-gray-500 dark:text-gray-400 grid grid-cols-5 gap-2"
+          >
+            <!-- Customer Type Selector: -->
+            <div>
+              <label
+                for="countries"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Select the Customer Type</label
+              >
+              <select
+                id="customer-type"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option selected value="individual">Individual</option>
+                <option value="enterprise">Enterprise</option>
+              </select>
+            </div>
+            <!-- Customer ID Section: -->
+            <div>
+              <label
+                for="number-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Insert The Customer ID:</label
+              >
+              <input
+                type="text"
+                id="customer-id"
+                aria-describedby="helper-text-explanation"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Your ID"
+                required
+              />
+            </div>
+            <!-- Number of Premium Chanels Input Section: -->
+            <div>
+              <label
+                for="number-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                ># Premium Channels:</label
+              >
+              <input
+                type="number"
+                id="premium-num"
+                aria-describedby="helper-text-explanation"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="..."
+                required
+              />
+            </div>
+            <!-- Bill Calculation Section -->
+            <div class="col-span-2">
+              <label
+                for="website-admin"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >See The Starlink Fee:
+              </label>
+              <div class="flex">
+                <span
+                  class="inline-flex items-center text-xs text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
+                >
+                  <button
+                    onclick="calStarlinkBill()"
+                    type="button"
+                    class="px-3 py-3 text-xs font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Calculate Now <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </span>
+                <span
+                  type="text"
+                  id="starlink-fee"
+                  class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="How much fee to be paid?"
+                ></span>
+              </div>
+            </div>
+          </div>
+          <!-- Section shown base on dropdown selector: -->
+          <div id="connect-section" class="w-1/5 mt-5 hidden">
+            <label
+              for="number-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Total Connects:</label
+            >
+            <input
+              type="number"
+              id="connect-num"
+              aria-describedby="helper-text-explanation"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="..."
+              required
+            />
+          </div>
+        </div>
+        <!-- -------------------------------------- #4 [END] Starlink TV Services FEE ------------------------------------- -->
+      </div>
+    </section>
+
+    <footer
+      class="bg-white rounded-lg shadow dark:bg-gray-900 fixed bottom-0 left-0 right-0"
+    >
+      <div
+        class="w-full mx-auto max-w-screen-xl p-5 md:flex md:items-center md:justify-between"
+      >
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+          ><i class="fa-brands fa-github text-base mr-2"></i>
+          <a
+            href="https://github.com/anhtustart1998/BC77_AnhTuLe_Exercise"
+            class="hover:underline"
+            >TuLA's CyberSoft Exercises</a
+          >.
+        </span>
+      </div>
+    </footer>
+
+    <!-- MAIN JS -->
+    <script src="./js/main.js"></script>
+    <!-- FLOWBITE SCRIPT -->
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+  </body>
+</html>
