@@ -1,0 +1,58 @@
+.sp-thongbao {
+  color: red;
+  margin-left: 2px;
+  display: none;
+}
+
+#content {
+  width: 100%;
+  background: #74ebd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #acb6e5,
+    #74ebd5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #acb6e5,
+    #74ebd5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.myCardHeader,
+.myCardFooter {
+  background-color: transparent;
+}
+
+progress-bar {
+  transition: width 0.3s ease-in-out;
+}
+
+.password-strength-meter {
+  text-align: left;
+  margin-top: 5px;
+}
+
+.password-strength-text {
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.sort-icons {
+  display: inline-block;
+  position: relative;
+  margin-left: 5px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Optional: Add hover effects */
+.btn-sort-asc:hover,
+.btn-sort-dsc:hover {
+  cursor: pointer;
+  color: red;
+}
