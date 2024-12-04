@@ -18,7 +18,7 @@ export const ProductCard = ({ heliInfo, onNameClick }) => {
         <div className="flex items-start justify-between">
           <span className="inline-flex items-center bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900/30 dark:text-blue-400 border border-blue-400">
             <i className="fa-regular fa-circle-check mr-1" />
-            {heliInfo.manufacture}
+            {heliInfo?.manufacture}
           </span>
           <span className="text-sm text-gray-500 dark:text-gray-400">
             {heliInfo?.quantity >= 0
@@ -28,7 +28,7 @@ export const ProductCard = ({ heliInfo, onNameClick }) => {
         </div>
         <a onClick={onNameClick} className="block group cursor-pointer">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-200">
-            {heliInfo.name}
+            {heliInfo?.name}
           </h5>
         </a>
         <ul className="grid grid-cols-2 gap-3 border-t border-gray-100 dark:border-gray-700 pt-3">
@@ -37,7 +37,7 @@ export const ProductCard = ({ heliInfo, onNameClick }) => {
               <GiHelicopterTail />
             </i>
             <p className="text-sm font-medium text-gray-500 dark:text-gray-400 ">
-              {heliInfo.engine}
+              {heliInfo?.engine}
             </p>
           </li>
           <li className="flex items-center gap-2 mt-2">
@@ -45,7 +45,7 @@ export const ProductCard = ({ heliInfo, onNameClick }) => {
               <GrSystem />
             </i>
             <p className="text-sm font-medium text-gray-500 dark:text-gray-400 ">
-              {heliInfo.system}
+              {heliInfo?.system}
             </p>
           </li>
         </ul>

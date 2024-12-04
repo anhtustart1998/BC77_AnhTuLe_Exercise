@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ProductCard } from "../Card/ProductCard";
 import axios from "axios";
 import { ProductModal } from "../Modal/ProductModal";
+import { Hero } from "../Hero/Hero";
 
 export const Banner = () => {
   const [helicopterData, setHelicoterData] = useState([]);
@@ -29,7 +30,8 @@ export const Banner = () => {
   return (
     <section className="w-full min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200 py-12">
       <div className="relative mx-auto max-w-7xl px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <Hero />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-5">
           {helicopterData.map((heli) => (
             <ProductCard
               key={heli.id}
